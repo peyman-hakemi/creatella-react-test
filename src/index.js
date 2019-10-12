@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const title = "My Simple Express React Webpack Babel Setup Environment";
+import Card from "./customElements/Card/Card";
 
-ReactDOM.render(<div>{title}</div>, document.getElementById("app"));
+ReactDOM.render(<Card />, document.getElementById("app"));
