@@ -8,7 +8,7 @@
 export function convertDate(date) {
     const diffInDays = date_diff_indays(date , new Date())
     const d = new Date(date)
-    if(diffInDays == 0) {
+    if(diffInDays === 0) {
         return `Today`
     } else if (diffInDays < 7 && diffInDays > 1) {
         return `${diffInDays} days ago`

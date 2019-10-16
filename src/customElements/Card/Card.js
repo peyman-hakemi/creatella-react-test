@@ -1,22 +1,24 @@
-import React, {useState} from "react";
+import React from "react";
 import Loading from '../../customElements/Loading/Loading'
 import "./styles.css";
 
-import {convertDate} from '../../utils/convertDate'
+import {convertDate} from '../../utils/functions/convertDate'
+import {convertCenetToDollar} from '../../utils/functions//convertCentToDollar'
 
 const Card = ({id, size, face, price, date, loading }) => {
+
   // CONVERT DATE WITH IMPORTED FUNCTION
   const convertedDate = convertDate(date)
   // CONVERT CENTS TO USD
-  let dollars = price / 100;
-  dollars = dollars.toLocaleString("en-US", {style:"currency", currency:"USD"});
+  const dollars = convertCenetToDollar(price)
 
   // IF LOADING PROP PASS TO CARD THEN RENDER LOADING
   if(loading) {
     return <div className='card'>
             <Loading /> 
            </div>
-  }
+              }
+
   // RENDER CARD
   return (
     <div className='card'>
